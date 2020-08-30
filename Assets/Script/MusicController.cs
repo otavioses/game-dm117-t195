@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicaControle : MonoBehaviour
+public class MusicController : MonoBehaviour
 {
-    public static MusicaControle musicaControle = null;
+    public static MusicController musicaControle = null;
 
     private void Awake()
     {
