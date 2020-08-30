@@ -71,30 +71,37 @@ public class GameController : MonoBehaviour
         {
             //Pega ponto aleatorio
             var spawPoint = obstaclesPoints[Random.Range(0, obstaclesPoints.Count)];
+            var spawPoint2 = obstaclesPoints[Random.Range(0, obstaclesPoints.Count)];
 
             //guarda posição desse ponto
             var obstacleSpawPostion = spawPoint.transform.position;
+            var obstacleSpawPostion2 = spawPoint2.transform.position;
 
-            Transform obstacle = obstacleCube;
-            //Cria um novo obstaculo
-            switch (Random.Range(0, 3))
-            {
-                case 0:
-                    obstacle = obstacleCube;
-                    break;
-                case 1:
-                    obstacle = obstacleCylinder;
-                    break;
-                case 2:
-                    obstacle = obstacleSphere;
-                    break;
-                default:
-                    break;
-            }
+            Transform obstacle = getRandomObstacle();
+            Transform obstacle2 = getRandomObstacle();
+
             var newObstacle = Instantiate(obstacle, obstacleSpawPostion, Quaternion.identity);
+            var newObstacle2 = Instantiate(obstacle2, obstacleSpawPostion2, Quaternion.identity);
 
             //Faz ele ser filho do tile basico
             newObstacle.SetParent(spawPoint.transform);
+            newObstacle2.SetParent(spawPoint2.transform);
+        }
+    }
+
+    private Transform getRandomObstacle()
+    {
+        //Cria um novo obstaculo
+        switch (Random.Range(0, 3))
+        {
+            case 0:
+                return obstacleCube;
+            case 1:
+                return obstacleCylinder;
+            case 2:
+                return obstacleSphere;
+            default:
+                return obstacleCube;
         }
     }
 }
