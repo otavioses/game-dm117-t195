@@ -3,7 +3,14 @@ guid: 43d7d78a0fbf10f42a965b207383c61e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tile: {fileID: 1970345491384866596, guid: 2ebb07eb7c2e445719327013e17f3496, type: 3}
+  - obstacleCube: {fileID: 8658672435936939960, guid: 8051c26380dc746bbb2cd168d2a12a18,
+      type: 3}
+  - obstacleCylinder: {fileID: 8658672435936939960, guid: 97c756b4040c44693b085e50042c469a,
+      type: 3}
+  - obstacleSphere: {fileID: 8658672435936939960, guid: ced2c88f868d5e64ca0111310a743a9e,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

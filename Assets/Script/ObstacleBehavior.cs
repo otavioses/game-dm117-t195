@@ -20,7 +20,7 @@ public class ObstacleBehavior : MonoBehaviour
     public AudioClip impact;
     AudioSource audioSource;
 
-    public static float velocidadeRolamento = 0.5f;
+    public static float velocidadeRolamento = 2f;
 
     /// <summary>
     /// Variavel referencia para o jogador
@@ -38,10 +38,10 @@ public class ObstacleBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MenuPauseBehavior.paused || GetGameOverMenu().active)
-        {
-            return;
-        }
+        //if (MenuPauseBehavior.paused || GetGameOverMenu().active)
+        //{
+        //    return;
+        //}
         // 0 - left - or touch
         // 1 - right
         // 2 - middle
@@ -67,28 +67,28 @@ public class ObstacleBehavior : MonoBehaviour
 
     void ResetGame()
     {
-        var gameOverMenu = GetGameOverMenu();
-        gameOverMenu.SetActive(true);
+        //var gameOverMenu = GetGameOverMenu();
+        //gameOverMenu.SetActive(true);
 
-        var botoes = gameOverMenu.transform.GetComponentsInChildren<Button>();
-        Button botaoContinue = null;
+        //var botoes = gameOverMenu.transform.GetComponentsInChildren<Button>();
+        //Button botaoContinue = null;
 
-        foreach (var botao in botoes)
-        {
-            if (botao.gameObject.name.Equals("BotaoContinuar"))
-            {
-                botaoContinue = botao;
-                break;
-            }
-        }
+        //foreach (var botao in botoes)
+        //{
+        //    if (botao.gameObject.name.Equals("BotaoContinuar"))
+        //    {
+        //        botaoContinue = botao;
+        //        break;
+        //    }
+        //}
 
-        if (botaoContinue)
-        {
+        //if (botaoContinue)
+        //{
 
-            StartCoroutine(ShowContinue(botaoContinue));
-            //botaoContinue.onClick.AddListener(UnityAdControle.ShowRewardAd);
-            //UnityAdControle.obstaculo = this;
-        }
+        //    StartCoroutine(ShowContinue(botaoContinue));
+        //    //botaoContinue.onClick.AddListener(UnityAdControle.ShowRewardAd);
+        //    //UnityAdControle.obstaculo = this;
+        //}
 
         //Reinicia o jogo
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -123,10 +123,10 @@ public class ObstacleBehavior : MonoBehaviour
     /// </summary>
     public void Continue()
     {
-        var go = GetGameOverMenu();
-        go.SetActive(false);
-        jogador.SetActive(true);
-        TouchedObject();
+        //var go = GetGameOverMenu();
+        //go.SetActive(false);
+        //jogador.SetActive(true);
+        //TouchedObject();
     }
 
     /// <summary>

@@ -9,7 +9,9 @@ public class GameController : MonoBehaviour
 {
     public Transform tile;
 
-    public Transform obstacle;
+    public Transform obstacleCube;
+    public Transform obstacleCylinder;
+    public Transform obstacleSphere;
 
     public Vector3 initialPoint = new Vector3(0, 0, -5);
 
@@ -29,7 +31,7 @@ public class GameController : MonoBehaviour
         proxTilePos = initialPoint;
         proxTileRot = Quaternion.identity;
 
-        for(int i = 0; i < numSpawIni; i++)
+        for (int i = 0; i < numSpawIni; i++)
         {
             SpawProxTile(i >= numTileWithoutObstacle);
         }
@@ -73,7 +75,22 @@ public class GameController : MonoBehaviour
             //guarda posição desse ponto
             var obstacleSpawPostion = spawPoint.transform.position;
 
+            Transform obstacle = obstacleCube;
             //Cria um novo obstaculo
+            switch (Random.Range(0, 3))
+            {
+                case 0:
+                    obstacle = obstacleCube;
+                    break;
+                case 1:
+                    obstacle = obstacleCylinder;
+                    break;
+                case 2:
+                    obstacle = obstacleSphere;
+                    break;
+                default:
+                    break;
+            }
             var newObstacle = Instantiate(obstacle, obstacleSpawPostion, Quaternion.identity);
 
             //Faz ele ser filho do tile basico

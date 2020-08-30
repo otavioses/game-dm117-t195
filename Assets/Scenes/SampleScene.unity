@@ -206,13 +206,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.42260215, y: -0.007908863, z: 0.003687963, w: 0.9062733}
   m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: -1, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.9686275, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -484,7 +484,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 1970345491384866596, guid: 2ebb07eb7c2e445719327013e17f3496, type: 3}
-  obstacle: {fileID: 8658672435936939960, guid: ced2c88f868d5e64ca0111310a743a9e,
+  obstacleCube: {fileID: 8658672435936939960, guid: 8051c26380dc746bbb2cd168d2a12a18,
+    type: 3}
+  obstacleCylinder: {fileID: 8658672435936939960, guid: 97c756b4040c44693b085e50042c469a,
+    type: 3}
+  obstacleSphere: {fileID: 8658672435936939960, guid: ced2c88f868d5e64ca0111310a743a9e,
     type: 3}
   initialPoint: {x: 0, y: 0, z: -5}
   numSpawIni: 20

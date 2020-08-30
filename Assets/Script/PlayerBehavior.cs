@@ -91,12 +91,9 @@ public class PlayerBehavior : MonoBehaviour
         //Time.deltaTime returns the time spent in the previous frame
 
         moveForce *= (Time.deltaTime * 60);
-
         rb.AddForce(moveForce);
-
-        //add for over the player
-        //rb.AddForce(velocidadeHorizontal, 0, velocidadeRolamento);
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<WallController>())
