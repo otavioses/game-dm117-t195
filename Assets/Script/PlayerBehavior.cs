@@ -56,7 +56,6 @@ public class PlayerBehavior : MonoBehaviour
 
         var velocidadeHorizontal = Input.GetAxis("Horizontal") * velocidadeEsquiva;
         var velocidadeVertical = Input.GetAxis("Vertical");
-        print("velocidadeVertical = " + velocidadeVertical);
 
 #if UNITY_STANDALONE || UNIT_EDITOR || UNIT_WEBPLAYER
 
@@ -86,7 +85,6 @@ public class PlayerBehavior : MonoBehaviour
         }
 
 #endif
-        Debug.Log("" + ObstacleBehavior.velocidadeRolamento);
         var moveForce = new Vector3(velocidadeHorizontal, 0, ObstacleBehavior.velocidadeRolamento * calculateAcceleration(velocidadeVertical));
 
         //Time.deltaTime returns the time spent in the previous frame
