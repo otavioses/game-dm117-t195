@@ -23,12 +23,13 @@ public class MainMenu : MonoBehaviour
     /// <param name="nameScene">Name of the scene to be loaded</param>
     public void loadScene(string nameScene)
     {
-        ObstacleBehavior.velocidadeRolamento = 0.1f;
-        //if (UnityAdControle.showAds)
-        //{
-        //    //Mostraum anuncio
-        //    UnityAdControle.ShowAd();
-        //}
+        ObstacleBehavior.velocidadeRolamento = 0.10f;
+ 
+        if (UnityAdController.showAds)
+        {
+            UnityAdController.ShowAd();
+        }
+        
         SceneManager.LoadScene(nameScene);
     }
 }

@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     public Vector3 initialPoint = new Vector3(0, 0, -5);
 
     [Range (1,20)]
-    public int numSpawIni;
+    public int numSpawIni = 1;
 
     [Range(1,4)]
     public int numTileWithoutObstacle = 4;
@@ -27,7 +27,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Advertisement.Initialize("2586169");
+        Advertisement.Initialize("2586165");
+
         proxTilePos = initialPoint;
         proxTileRot = Quaternion.identity;
 
