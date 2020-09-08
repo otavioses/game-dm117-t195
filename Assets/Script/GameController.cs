@@ -77,6 +77,7 @@ public class GameController : MonoBehaviour
             //guarda posição desse ponto
             var obstacleSpawPostion = spawPoint.transform.position;
             var obstacleSpawPostion2 = spawPoint2.transform.position;
+            obstacleSpawPostion.y = 1;
 
             Transform obstacle = getRandomObstacle();
             Transform obstacle2 = getRandomObstacle();
@@ -86,7 +87,11 @@ public class GameController : MonoBehaviour
 
             //Faz ele ser filho do tile basico
             newObstacle.SetParent(spawPoint.transform);
-            newObstacle2.SetParent(spawPoint2.transform);
+            if (!obstacleSpawPostion.Equals(obstacleSpawPostion2))
+            {
+                newObstacle2.SetParent(spawPoint2.transform);
+            }
+            
         }
     }
 

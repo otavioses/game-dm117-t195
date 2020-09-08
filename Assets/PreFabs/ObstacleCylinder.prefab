@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8658672435936939967}
   - component: {fileID: 8658672435936939963}
   - component: {fileID: 4446700710669336096}
+  - component: {fileID: -5170642489163470943}
   m_Layer: 0
   m_Name: ObstacleCylinder
   m_TagString: Untagged
@@ -107,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b49fbcc88daae847bfe3c6c3fb9e643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempoEspera: 2
+  watingTime: 0.1
   explosion: {fileID: 3595838378728773903, guid: 22bc2a86097594762a7c38c376b96693,
     type: 3}
   impact: {fileID: 8300000, guid: 4b941fcfd55394818bf5653c6d66b342, type: 3}
@@ -207,3 +208,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &-5170642489163470943
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8658672435936939964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script\MusicController.cs" />
     <Compile Include="Assets\Script\ObstacleBehavior.cs" />
     <Compile Include="Assets\Script\PlayerBehavior.cs" />
+    <Compile Include="Assets\Script\RotateCoin.cs" />
     <Compile Include="Assets\Script\ShareComp.cs" />
     <Compile Include="Assets\Script\UnityAdController.cs" />
     <Compile Include="Assets\Script\WallController.cs" />

@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b49fbcc88daae847bfe3c6c3fb9e643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempoEspera: 2
+  watingTime: 0.1
   explosion: {fileID: 3595838378728773903, guid: 22bc2a86097594762a7c38c376b96693,
     type: 3}
   impact: {fileID: 8300000, guid: 4b941fcfd55394818bf5653c6d66b342, type: 3}
