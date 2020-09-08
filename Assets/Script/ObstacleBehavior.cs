@@ -13,8 +13,11 @@ public class ObstacleBehavior : MonoBehaviour
 
     MeshRenderer meshRenderer = new MeshRenderer();
     BoxCollider boxCollider = new BoxCollider();
+    SphereCollider sphereCollider = new SphereCollider();
 
     public AudioClip impact;
+
+    [Tooltip("Explosion sound")]
     AudioSource audioSource;
 
     public static float velocidadeRolamento = 2f;
@@ -25,6 +28,7 @@ public class ObstacleBehavior : MonoBehaviour
     {
         meshRenderer = GetComponent<MeshRenderer>();
         boxCollider = GetComponent<BoxCollider>();
+        sphereCollider = GetComponent<SphereCollider>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -149,7 +153,15 @@ public class ObstacleBehavior : MonoBehaviour
         }
 
         meshRenderer.enabled = false;
-        boxCollider.enabled = false;
+        if (boxCollider != null)
+        {
+            boxCollider.enabled = false;
+        }
+        else if (sphereCollider != null)
+        {
+            sphereCollider.enabled = false;
+        }
+        
 
         Destroy(this.gameObject);
     }
