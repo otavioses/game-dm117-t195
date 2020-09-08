@@ -36,14 +36,13 @@ public class PlayerBehavior : MonoBehaviour
 
     private Vector2 touchInitial;
 
+    [Tooltip("O som de impacto na parede")]
     public AudioClip impact;
-    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -110,7 +109,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<WallController>())
         {
-            audioSource.PlayOneShot(impact, 0.7F);
+            GetComponent<AudioSource>().PlayOneShot(impact, 0.7F);
         }
     }
 

@@ -17,9 +17,6 @@ public class ObstacleBehavior : MonoBehaviour
 
     public AudioClip impact;
 
-    [Tooltip("Explosion sound")]
-    AudioSource audioSource;
-
     public static float velocidadeRolamento = 2f;
 
     private GameObject player;
@@ -29,7 +26,6 @@ public class ObstacleBehavior : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
         boxCollider = GetComponent<BoxCollider>();
         sphereCollider = GetComponent<SphereCollider>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -38,7 +34,7 @@ public class ObstacleBehavior : MonoBehaviour
         {
             return;
         }
-        
+
         // 0 - left - or touch
         // 1 - right
         // 2 - middle
@@ -53,7 +49,7 @@ public class ObstacleBehavior : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerBehavior>())
         {
-            audioSource.PlayOneShot(impact, 0.7F);
+            GetComponent<AudioSource>().PlayOneShot(impact, 0.7F);
             collision.gameObject.SetActive(false);
             player = collision.gameObject;
 
@@ -145,10 +141,9 @@ public class ObstacleBehavior : MonoBehaviour
 
         if (explosion != null)
         {
+            GetComponent<AudioSource>().PlayOneShot(impact, 0.7F);
 
-            audioSource.PlayOneShot(impact, 0.7F);
             var particles = Instantiate(explosion, transform.position, Quaternion.identity);
-            audioSource.PlayOneShot(impact, 0.7F);
             Destroy(particles, 1.0f);
         }
 

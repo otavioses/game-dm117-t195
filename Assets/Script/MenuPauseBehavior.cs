@@ -43,6 +43,13 @@ public class MenuPauseBehavior : MonoBehaviour
         menuPausePanel.SetActive(true);
     }
 
+    public void loadSettingsScene(string nameScene)
+    {
+        SceneManager.LoadScene(nameScene);
+    }
+
+
+
     // Start is called before the first frame update
     void Start()
     {

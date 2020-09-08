@@ -13,6 +13,6 @@ public class ExplosionBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GetComponent<AudioSource>().enabled = !SettingsController.muted;
     }
 }
