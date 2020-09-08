@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
     /// <param name="nameScene">Name of the scene to be loaded</param>
     public void loadScene(string nameScene)
     {
-        ObstacleBehavior.velocidadeRolamento = 0.10f;
+        ObstacleBehavior.velocidadeRolamento = 2.0f;
  
         if (UnityAdController.showAds)
         {

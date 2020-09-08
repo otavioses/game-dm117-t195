@@ -153,4 +153,9 @@ public class ObstacleBehavior : MonoBehaviour
 
         Destroy(this.gameObject);
     }
+
+    public static void SetInitialVelocity()
+    {
+        velocidadeRolamento = 2.0f;
+    }
 }

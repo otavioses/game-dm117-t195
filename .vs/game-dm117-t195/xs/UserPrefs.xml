@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{F6CA2063-EB2D-EC14-67FA-DB41FD75F512}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/MenuPauseBehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ObstacleBehavior.cs">
     <Files>
       <File FileName="Assets/Script/PlayerBehavior.cs" Line="32" Column="20" />
       <File FileName="Assets/Script/MusicController.cs" />
-      <File FileName="Assets/Script/ObstacleBehavior.cs" Line="137" Column="6" />
+      <File FileName="Assets/Script/ObstacleBehavior.cs" Line="152" Column="1" />
       <File FileName="Assets/Script/ShareComp.cs" />
       <File FileName="Assets/Script/GameController.cs" />
       <File FileName="Assets/Script/MenuPauseBehavior.cs" Line="43" Column="19" />
@@ -19,7 +19,7 @@
           <Node name="game-dm117-t195" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Script" expanded="True">
-                <Node name="MenuPauseBehavior.cs" selected="True" />
+                <Node name="ObstacleBehavior.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -29,7 +29,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d3f91a56-2ca9-40dc-888e-698cbbd5dfda" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="864e901d-7228-4306-a9c5-40ed3a7b8b96" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

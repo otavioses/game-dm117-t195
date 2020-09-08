@@ -16,7 +16,7 @@ public class MenuPauseBehavior : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        ObstacleBehavior.velocidadeRolamento = 0.1f;
+        ObstacleBehavior.velocidadeRolamento = 2.0f;
     }
 
     /// <summary>
