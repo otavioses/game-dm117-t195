@@ -7,17 +7,26 @@ using UnityEngine.Advertisements;
 
 public class GameController : MonoBehaviour
 {
+    [Tooltip("Tile basico a ser spawnado")]
     public Transform tile;
 
+    [Tooltip("obstáculo do tipo cubo")]
     public Transform obstacleCube;
+
+    [Tooltip("obstáculo do tipo cilindrico")]
     public Transform obstacleCylinder;
+
+    [Tooltip("obstáculo do tipo esfera")]
     public Transform obstacleSphere;
 
+    [Tooltip("ponto inicial")]
     public Vector3 initialPoint = new Vector3(0, 0, -5);
 
+    [Tooltip("quantidade de spawn inicial")]
     [Range (1,20)]
     public int numSpawIni = 1;
 
+    [Tooltip("quantidade de tiles iniciais sem obstáculo")]
     [Range(1,4)]
     public int numTileWithoutObstacle = 4;
 
@@ -44,6 +53,10 @@ public class GameController : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// metodo para criar os proximos obstáculos
+    /// </summary>
+    /// <param name="spawObstacles">colocar ou nao obstáculo naquele tile basic</param>
     public void SpawProxTile(bool spawObstacles = true)
     {
         var newTile = Instantiate(tile, proxTilePos, proxTileRot);
@@ -95,6 +108,10 @@ public class GameController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Cria um obstáculo randomico
+    /// </summary>
+    /// <returns></returns>
     private Transform getRandomObstacle()
     {
         //Cria um novo obstaculo

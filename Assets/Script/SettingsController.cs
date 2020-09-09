@@ -6,10 +6,14 @@ using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
 {
+    /// <summary>
+    /// flag para controlar o mute/unmute
+    /// </summary>
     public static bool muted = false;
-    // Start is called before the first frame update
-
+    
     GameObject toogleMusic;
+
+    // Start is called before the first frame update
     void Start()
     {
         toogleMusic = GameObject.Find("Music");
@@ -20,16 +24,11 @@ public class SettingsController : MonoBehaviour
     {
         toogleMusic.GetComponent<Toggle>().isOn = !muted;
     }
-    public void Mute()
-    {
-        SetAudioMute(true);
-    }
 
-    public void Unmute()
-    {
-        SetAudioMute(false);
-    }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="mute"></param>
     public void SetAudioMute(bool mute)
     {
         AudioSource[] sources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
@@ -40,7 +39,11 @@ public class SettingsController : MonoBehaviour
         muted = !mute;
     }
 
-    public void loadSettingsScene(string nameScene)
+    /// <summary>
+    /// carrega outra cena
+    /// </summary>
+    /// <param name="nameScene"></param>
+    public void loadScene(string nameScene)
     {
         SceneManager.LoadScene(nameScene);
     }

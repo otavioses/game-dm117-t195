@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ObstacleBehavior : MonoBehaviour
 {
-    [Tooltip("Wating time before restart the gaame")]
-    public float watingTime = 0.1f;
+    [Tooltip("Wating time before restart the game")]
+    public float waitingTime = 0.1f;
 
     [Tooltip("Particle system of explosion")]
     public GameObject explosion;
@@ -15,6 +15,7 @@ public class ObstacleBehavior : MonoBehaviour
     BoxCollider boxCollider = new BoxCollider();
     SphereCollider sphereCollider = new SphereCollider();
 
+    [Tooltip("Sound to play when impact")]
     public AudioClip impact;
 
     public static float velocidadeRolamento = 2f;
@@ -53,10 +54,13 @@ public class ObstacleBehavior : MonoBehaviour
             collision.gameObject.SetActive(false);
             player = collision.gameObject;
 
-            Invoke("ResetGame", watingTime);
+            Invoke("ResetGame", waitingTime);
         }
     }
 
+    /// <summary>
+    /// Metodo para resetar o jogo
+    /// </summary>
     void ResetGame()
     {
         var gameOverMenu = GetGameOverMenu();
@@ -80,6 +84,11 @@ public class ObstacleBehavior : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Método para continuar o game
+    /// </summary>
+    /// <param name="buttonResume">botao resume</param>
+    /// <returns></returns>
     public IEnumerator ShowContinue(Button buttonResume)
     {
         var buttonTxt = buttonResume.GetComponentInChildren<Text>();
@@ -109,6 +118,9 @@ public class ObstacleBehavior : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Continuar o game depois de pausado
+    /// </summary>
     public void Continue()
     {
         var go = GetGameOverMenu();
@@ -117,12 +129,19 @@ public class ObstacleBehavior : MonoBehaviour
         TouchedObject();
     }
 
+    /// <summary>
+    /// retorna o game over menu
+    /// </summary>
+    /// <returns>game over menu</returns>
     GameObject GetGameOverMenu()
     {
         return GameObject.Find("Canvas").transform.Find("MenuGameOver").gameObject;
     }
 
-
+    /// <summary>
+    /// Método para detectar toques
+    /// </summary>
+    /// <param name="touch">posisao tocada</param>
     private void touchObjects(Vector2 touch)
     {
         Ray touchRay = Camera.main.ScreenPointToRay(touch);
@@ -135,6 +154,9 @@ public class ObstacleBehavior : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Objeto tocado
+    /// </summary>
     public void TouchedObject()
     {
         velocidadeRolamento += 0.5f;
@@ -159,10 +181,5 @@ public class ObstacleBehavior : MonoBehaviour
         
 
         Destroy(this.gameObject);
-    }
-
-    public static void SetInitialVelocity()
-    {
-        velocidadeRolamento = 2.0f;
     }
 }

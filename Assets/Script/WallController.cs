@@ -5,13 +5,9 @@ using UnityEngine;
 public class WallController : MonoBehaviour
 {
 
-    //public AudioClip impact;
-    //AudioSource audioSource;
-    // Start is called before the first frame update
-    //void Start()
-    //{
-    //    audioSource = GetComponent<AudioSource>();
-    //}
+    void Start()
+    {
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,6 +17,6 @@ public class WallController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //audioSource.PlayOneShot(impact, 0.7F);
+
     }
 }

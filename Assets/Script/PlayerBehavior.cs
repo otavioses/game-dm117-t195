@@ -11,6 +11,7 @@ public class PlayerBehavior : MonoBehaviour
         Touch
     }
 
+    [Tooltip("Tipo de movimento aceito")]
     public HorizontalMoveType horizontalMove = HorizontalMoveType.Acceleration;
 
     // Start is called before the first frame update
@@ -43,12 +44,13 @@ public class PlayerBehavior : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Mutar e desmutar o audio se trocar a configuração
+        GetComponent<AudioSource>().enabled = !SettingsController.muted;
         if (MenuPauseBehavior.paused) {
             return;
         }
@@ -86,12 +88,15 @@ public class PlayerBehavior : MonoBehaviour
 #endif
         var moveForce = new Vector3(velocidadeHorizontal, 0, ObstacleBehavior.velocidadeRolamento * calculateAcceleration(velocidadeVertical));
 
-        //Time.deltaTime returns the time spent in the previous frame
-
         moveForce *= (Time.deltaTime * 60);
         rb.AddForce(moveForce);
     }
 
+    /// <summary>
+    /// Calcula a aceleração
+    /// </summary>
+    /// <param name="value">acelerando ou freiando</param>
+    /// <returns>retorna a velocidade final</returns>
     private float calculateAcceleration(float value)
     {
         if (value == 0)
@@ -117,7 +122,7 @@ public class PlayerBehavior : MonoBehaviour
     /// Calc player's moves
     /// </summary>
     /// <param name="screenSpaceCoordinate">Screen space coordinates</param>
-    /// <returns></returns>
+    /// <returns>retorna o movimento pros lados</returns>
     private float CalcMoves(Vector2 screenSpaceCoordinate)
     {
         var position = Camera.main.ScreenToViewportPoint(screenSpaceCoordinate);

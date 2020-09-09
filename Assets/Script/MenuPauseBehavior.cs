@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuPauseBehavior : MonoBehaviour
 {
+    /// <summary>
+    /// flag para controle de pause
+    /// </summary>
     public static bool paused;
 
     [SerializeField]
@@ -43,17 +46,18 @@ public class MenuPauseBehavior : MonoBehaviour
         menuPausePanel.SetActive(true);
     }
 
+    /// <summary>
+    /// carregar tela se settings
+    /// </summary>
+    /// <param name="nameScene">Name of the scene to be loaded</param>
     public void loadSettingsScene(string nameScene)
     {
         SceneManager.LoadScene(nameScene);
     }
 
-
-
     // Start is called before the first frame update
     void Start()
     {
-        //paused = false;
         Pause(false);
     }
 

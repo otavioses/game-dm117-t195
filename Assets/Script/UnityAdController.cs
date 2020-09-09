@@ -18,6 +18,9 @@ public class UnityAdController : MonoBehaviour
     //Reference to obstacle
     public static ObstacleBehavior obstacle;
 
+    /// <summary>
+    /// Mostra ad simples
+    /// </summary>
     public static void ShowAd()
     {
         ShowOptions options = new ShowOptions();
@@ -34,6 +37,10 @@ public class UnityAdController : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    /// <summary>
+    /// Despausar
+    /// </summary>
+    /// <param name="showResult"></param>
     public static void Unpause(ShowResult showResult)
     {
         //Unpause the game after the ad
@@ -41,6 +48,9 @@ public class UnityAdController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    /// <summary>
+    /// Mostra ad com recompensa
+    /// </summary>
     public static void ShowRewardAd()
     {
         nextTimeReward = DateTime.Now.AddSeconds(15);
@@ -60,6 +70,10 @@ public class UnityAdController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// trata resultado do ad com recompensa
+    /// </summary>
+    /// <param name="showResult">resultado do ad</param>
     public static void HanleAndShowResult(ShowResult showResult)
     {
         switch (showResult)
